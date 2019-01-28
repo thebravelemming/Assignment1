@@ -1,0 +1,157 @@
+(a) Paste the console output from step 3.C:
+
+✘-TSTP ~/repos/soft/Assignment1 [master ↑·1|✚ 1…1] 
+21:24 $ git push
+Counting objects: 3, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 368 bytes | 368.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To github.com:thebravelemming/Assignment1.git
+   f7a5d56..8fe45bc  master -> master
+
+
+-----
+
+(b) How many total commits to the repo so far? What command did you use?
+
+There have been 9 total commits: 2 by me, 1 by Ephyras, and 6 by Javier. I
+obtained this information using the command "git shortlog -s".
+
+
+-----
+
+(c) When was the .gitignore file last modified? What command did you use to
+obtain this information?
+
+commit 2f6863fcae58352d7fa1674ae373bbc9e6cbedf1
+Author: Javier <Javier@RicardoLaptop>
+Date:   Thu Sep 15 10:29:34 2016 -0400
+
+    Git ignore was changed. Some local files should not be included in the
+    remote.
+
+I used the command "git log" to obtain this.
+
+
+-----
+
+(d) Mention two reasons why branches are used in a Git repository:
+
+Branches are used so that there is always a tested/stable version of code that
+is available for release (the master branch) at all times, and because using
+branches for feature development or bug fixes or any other reason allows teams
+of developers to more efficiently divide up the work among the team for later
+integration.
+
+
+-----
+
+(e) What is the difference between git log and git status?
+
+Git status is used to show the state of the working tree. It is a way of
+tracking the current branch's condition. Git log, however, is a log of all the
+commits to the repository by all contributors.
+
+
+-----
+
+(f) What command would you use to see the commits where "Weapon.h" was one of
+the committed files?
+
+In order to accomplish this, I would use the command "git log --follow --
+"Weapon.h"". I attempted this, but "Weapon.h" is not a file used in the current
+project. There is, however, a "Weapon.java" file. When I ran the command
+"git log --follow -- "Weapon.java"", I was able to see the following:
+
+✘-128 ~/repos/soft/Assignment1/src/edu/fsu/cs/cen5035 [master ↑·1|✚ 1] 
+22:04 $ git log --follow -- "Weapon.java"
+commit 871bf6a4d6a7f525aeca876e2ab445390633c130
+Author: Javier <Javier@RicardoLaptop>
+Date:   Thu Sep 15 10:27:32 2016 -0400
+
+    Role game for Git Assignment.
+    
+    This framework inclused the interdace Sword, the RoleGame class with
+    a partial implementation of the game, and one weapon: Sword.
+
+Based on my ability to find a commit by following a specific file, I am
+reasonably certain this command will do what was asked if the file did indeed
+exist.
+
+
+-----
+
+(g) What command would you use to see the commits whose commit message contains
+the word "file"?
+
+I would use the command: git log grep="file"
+
+
+-----
+
+(h) In the context of OOP programming (I) What is inheritance? (II) What is
+polymorphism? (III) What is encapsulation?
+
+I. Inheritance is a way of developing objects based on a hierarchy. Objects can
+"inherit" behaviors, methods, and variables from other object classes, and is
+then free to create new behaviors, methods, and variables as either an extension
+of previous classes or in completely new ways. This promotes programming by
+composition, and helps build robust programs by reusing previously tested/proven
+classes.
+
+II. Polymorphism is a type of run-time binding that can be used to make code
+behave in different ways depending on the type of object (software construct)
+that it encounters. This type may not be known until the program is running. For
+example, cars and trucks are both automobiles, so we could use automobile as
+base class inherited by both. We then write our driver program for automobiles,
+and we can now process either cars or trucks because they are both
+automobiles. The code will adapt to the correct situation, relying on the method
+implementations in car or truck to override the standard behavior of automobile.
+
+III. Encapsulation is a way of building objects. The general idea is that an
+object's class definition should contain all the variables and methods that
+will be necessary for an object to fulfill its purpose. When the object is
+instantiated, it will not need outside data structures or functions in order
+work. Instead, it is a stand-alone thing/object.
+
+
+-----
+
+(i) What is the main difference between the "Dictator and Lieutenants" workfolw
+and the "Integration Management" Workflow?
+
+There are several differences between the two, but the most important appears to
+be the very existence of the Lieutenants as intermediaries between the
+developers and the sole person with push access to the Blessed Repository. The
+bottom rung developers are expected to rebase their new code onto the master
+branch that they have acquired from the Blessed Repository. This creates a
+situation where the Lieutenants dole out features to be worked on, and the
+developers have less freedom to work beyond the bounds that are given to them as
+part of their assignments. The Lieutenants will only forward to the Dictator
+that code which they have integration tested themselves, so the controller of
+the Blessed Repo only has to deal with a very few senior developers rather than
+many underlings jockying for position and attention. While in both models only
+one person can push to the Blessed Repository, the Dictator model includes extra
+"bureaucracy", if you will, which restricts the actions of all involved to a
+smaller solution/problem domain, with the exception of the Dictator, of course.
+
+-----
+
+(j) Why would a team of 100 developers benefit more by following the Dictator
+workflow instead of the centralized workflow?
+
+The Dictator workflow would be more beneficial to a large team of developers
+because of the imposed order and the small problem/solution domain that each
+developer is exposed to. In a Centralized workflow, a large team would
+inevitably create and frequently encounter chaos due to the uncontrolled
+commiting of code to the single repository that they all have access to. 
+Much time would be wasted as developers constantly try to sort out all the merge
+conflicts that arise from so many people commiting to the same repository. The
+Dictator model would alleviate this problem, allowing developers to focus on
+specific issues without fear of accidentally preventing others from being able
+to complete their tasks. The bottom rung developers are free to work, while only
+the Lieutenants and the Dictator have to worry about sorting out integration
+issues in order to keep the master branch stable and current.
+
