@@ -1,3 +1,5 @@
+The answers to the questions from 3.E follow:
+
 (a) Paste the console output from step 3.C:
 
 ✘-TSTP ~/repos/soft/Assignment1 [master ↑·1|✚ 1…1] 
