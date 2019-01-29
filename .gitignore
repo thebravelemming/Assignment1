@@ -3,4 +3,7 @@
 /nbproject/
 /build/
 /test/
+
 *.java~
+*.iml
+.idea/
