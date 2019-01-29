@@ -18,10 +18,14 @@ public class SimpleHammer extends BasicWeapon implements Weapon {
 
     @Override
     public int hit(int armor) {
-	if armor < 30 return DAMAGE;
-	val = DAMAGE - armor;
-	if val < 0 return 0;
-	else return val;
+		int damage = 0;
+		if armor < 30
+		    damage = DAMAGE;
+		else
+			damage = DAMAGE - armor;
+
+		if damage < 0 return 0;
+		return damage;
     }
 
 }
