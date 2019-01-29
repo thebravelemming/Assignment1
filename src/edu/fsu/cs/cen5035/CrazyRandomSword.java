@@ -24,14 +24,16 @@ public class CrazyRandomSword extends BasicWeapon implements Weapon {
     @Override
     public int hit(int armor) {
 		int min = 3;
-		int max = Math.floor(1.0/3.0) * armor);
+		int max = Math.floor((1.0/3.0) * armor);
 
-	    int ignore = ThreadLocalRandom.current().nextInt(min, max+1));
+	    int ignore = ThreadLocalRandom.current().nextInt(min, max+1);
         float diff = (100.0 - ignore) / 100;
 
         int damage = DAMAGE - (int)(diff * armor);
-        if damage < 0 return 0;
-        return damage;
+	    if (damage < 0) {
+			return 0;
+		}
+		return damage;
     }
 
 }
