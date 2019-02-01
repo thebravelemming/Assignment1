@@ -62,10 +62,8 @@ commits to the repository by all contributors.
 (f) What command would you use to see the commits where "Weapon.h" was one of
 the committed files?
 
-In order to accomplish this, I would use the command "git log --follow --
-"Weapon.h"". I attempted this, but "Weapon.h" is not a file used in the current
-project. There is, however, a "Weapon.java" file. When I ran the command
-"git log --follow -- "Weapon.java"", I was able to see the following:
+When I ran the command "git log --follow -- "Weapon.java"", I was able to see
+the following:
 
 ✘-128 ~/repos/soft/Assignment1/src/edu/fsu/cs/cen5035 [master ↑·1|✚ 1] 
 22:04 $ git log --follow -- "Weapon.java"
@@ -77,11 +75,6 @@ Date:   Thu Sep 15 10:27:32 2016 -0400
     
     This framework inclused the interdace Sword, the RoleGame class with
     a partial implementation of the game, and one weapon: Sword.
-
-Based on my ability to find a commit by following a specific file, I am
-reasonably certain this command will do what was asked if the file did indeed
-exist.
-
 
 -----
 
@@ -156,4 +149,6 @@ specific issues without fear of accidentally preventing others from being able
 to complete their tasks. The bottom rung developers are free to work, while only
 the Lieutenants and the Dictator have to worry about sorting out integration
 issues in order to keep the master branch stable and current.
+
+-----
 
