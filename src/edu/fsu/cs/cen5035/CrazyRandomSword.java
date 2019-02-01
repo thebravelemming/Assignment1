@@ -11,8 +11,8 @@ public class CrazyRandomSword extends BasicWeapon implements Weapon {
     import java.lang.Math;
 
     public CrazyRandomSword() {
-	int min = 4;
-	int max = 99;
+		int min = 4;
+		int max = 99;
         super(ThreadLocalRandom.current().nextInt(min, max+1));
     }
 
