@@ -9,11 +9,11 @@ package edu.fsu.cs.cen5035;
  * of armor ignored.
  */
 
+import java.util.concurrent.ThreadLocalRandom;
+import java.lang.Math;
+
 public class LuckyDagger extends BasicWeapon implements Weapon {
     
-    import java.util.concurrent.ThreadLocalRandom;
-    import java.lang.Math;
-
     public LuckyDagger() {
         super(5);
     }
