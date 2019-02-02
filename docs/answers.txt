@@ -150,5 +150,30 @@ to complete their tasks. The bottom rung developers are free to work, while only
 the Lieutenants and the Dictator have to worry about sorting out integration
 issues in order to keep the master branch stable and current.
 
------
+**********
 
+
+
+Question 5: Is the RoleGame prototype using polymorphism and/or encapsulation?
+If you find that the prototype is using any of these two OOP principles, please
+discuss in which way the prototype is using it.
+
+Answer:
+The RoleGame prototype is directly using polymorphism, and is indirectly using
+encapsulation.
+
+Polymorphism is displayed by using the WeaponFactory to return a Weapon
+object. All of the specific weapons are subclasses of Weapon, and thus we can
+use polymorphism to simplify programming. Rather than having to have different
+factory methods for each subclass of weapon, we can treat them all base class
+objects and reduce the amount of code we need to write and maintain. We also
+make use of polymorphism when we print the data from the hit() method of each
+object. This triggers each object to execute the method as it exists within its
+derived subclass override. This allows the objects to act independently but be
+treated as the same.
+
+Encapsulation is what is used by the base class and the derived weapon
+classes. We are making use of it, through polymorphism, to access the relevant
+information and properties of each object. We aren't directly making use of
+encapsulation here since we aren't storing data into the object, we are merely
+exploiting its properties.
