@@ -31,7 +31,7 @@ public class LuckyDagger extends BasicWeapon implements Weapon {
 		int lucky = ThreadLocalRandom.current().nextInt(min, max+1);
 
 		if (lucky == 13) {
-			return Math.floor((7.0 * armor) / 3.0);
+			return (int)Math.floor((7.0 * armor) / 3.0);
 		}
 
 		int damage = DAMAGE - armor;
