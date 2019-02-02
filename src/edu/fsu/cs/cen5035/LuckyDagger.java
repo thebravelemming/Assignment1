@@ -6,7 +6,7 @@ package edu.fsu.cs.cen5035;
  *
  * This weapon has a low damage value, but has a chance to ignore
  * all armor and simulatenously deliver damage equal to the amount
- * of armor ignored.
+ * of armor ignored. It will always ignore 5% of the armor.
  */
 
 import java.util.concurrent.ThreadLocalRandom;
@@ -34,7 +34,7 @@ public class LuckyDagger extends BasicWeapon implements Weapon {
 			return (int)Math.floor((7.0 * armor) / 3.0);
 		}
 
-		int damage = DAMAGE - armor;
+		int damage = DAMAGE - (int)Math.floor(0.95 * armor);
 		
 	    if (damage < 0) {
 			return 0;
